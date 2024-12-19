@@ -33,10 +33,6 @@ void update_game() {
                 player_y_velocity = -JUMP_STRENGTH;
             }
 
-            if (is_colliding(player_pos, EXIT)) {
-                game_state = VICTORY_STATE;
-            }
-
             update_player();
             break;
 

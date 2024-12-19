@@ -42,6 +42,7 @@ void update_player() {
     }
 
     if (is_colliding(player_pos, EXIT)) {
+        load_level(1);
         game_state = VICTORY_STATE;
     }
 }

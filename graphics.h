@@ -135,7 +135,7 @@ void animate_victory_menu_background() {
         ball.x += ball.dx;
         if (ball.x - ball.radius < 0 ||
             ball.x + ball.radius >= screen_size.x) {
-            ball.dx = -ball.dx;
+            ball.dx = -ball.dx;coin_sound;
         }
         ball.y += ball.dy;
         if (ball.y - ball.radius < 0 ||
