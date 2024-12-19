@@ -14,6 +14,7 @@ void update_game() {
     switch(game_state) {
         case MENU_STATE:
             if (IsKeyDown(KEY_ENTER)){
+                ClearBackground(WHITE);
                 game_state = GAME_STATE;
             }
             break;
@@ -32,23 +33,21 @@ void update_game() {
                 player_y_velocity = -JUMP_STRENGTH;
             }
 
+            if (is_colliding(player_pos, EXIT)) {
+                game_state = VICTORY_STATE;
+            }
+
             update_player();
             break;
 
         case PAUSE_STATE:
-            if (IsKeyPressed(KEY_P)) {
-                game_state = GAME_STATE;
-            }
+            if (IsKeyPressed(KEY_ESCAPE)) {
             draw_pause_menu();
-            break;
-        case VICTORY_STATE:
-            if (game_state == GAME_STATE && is_colliding(player_pos, EXIT)) {
-                game_state = VICTORY_STATE;  // Switch to victory state when player collides with exit
             }
-            if (IsKeyPressed(KEY_ENTER)) {
-                    game_state = GAME_STATE;
-                    player_pos.x = 100;
-                    player_pos.y = 100;
+                break;
+        case VICTORY_STATE:
+            if (IsKeyDown(KEY_ENTER)) {
+                game_state = MENU_STATE;
             }
             break;
     }
@@ -69,6 +68,7 @@ void draw_game() {
             draw_pause_menu();
             break;
         case VICTORY_STATE:
+            ClearBackground(BLACK);
             draw_victory_menu_background();
             draw_victory_menu();
             break;
