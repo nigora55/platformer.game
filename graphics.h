@@ -36,6 +36,7 @@ void draw_menu() {
     draw_text(game_subtitle);
 }
 
+
 void draw_game_overlay() {
     Text score = {
         "Score " + std::to_string(player_score),
@@ -46,7 +47,7 @@ void draw_game_overlay() {
         "Score " + std::to_string(player_score),
         { 0.503f, 0.055f },
         48.0f,
-        GRAY
+        BROWN
     };
 
     draw_text(score_shadow);

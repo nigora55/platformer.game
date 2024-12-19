@@ -20,7 +20,7 @@ void load_images() {
     air_image     = LoadTexture("data/images/air.png");
     exit_image    = LoadTexture("data/images/exit.png");
     coin_sprite   = load_sprite("data/images/coin/coin",     ".png", 3, true, 18);
-    player_sprite = load_sprite("data/images/player/player", ".png", 3, true, 10);
+    player_sprite = load_sprite("data/images/player/cat", ".png", 3, true, 9);
 }
 
 void unload_images() {
@@ -115,5 +115,6 @@ void unload_sounds() {
     UnloadSound(coin_sound);
     UnloadSound(exit_sound);
 }
+
 
 #endif // IMAGES_H

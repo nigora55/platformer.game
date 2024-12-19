@@ -89,15 +89,15 @@ struct Text {
 };
 
 Text game_title = {
-    "Platformer",
+    "MEOW!",
     { 0.50f, 0.50f },
-    100.0f,
-    RED
+    150.0f,
+    BROWN,
 };
 
 Text game_subtitle = {
     "Press Enter to Start",
-    { 0.50f, 0.65f }
+    { 0.50f, 0.65f },
 };
 
 Text game_paused = {
@@ -139,6 +139,7 @@ sprite player_sprite;
 
 Sound coin_sound;
 Sound exit_sound;
+Sound background_sound;
 
 /* Victory Menu Background */
 
@@ -163,10 +164,13 @@ size_t game_frame = 0;
 /* Game States */
 
 enum game_state {
-    GAME_STATE
-    // TODO
+    MENU_STATE,
+    GAME_STATE,
+    PAUSE_STATE,
+    VICTORY_STATE,
 };
-game_state game_state = GAME_STATE;
+
+game_state game_state = MENU_STATE;
 
 /* Forward Declarations */
 
