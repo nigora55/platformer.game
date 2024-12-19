@@ -40,9 +40,9 @@ void update_player() {
         player_score+=10;
         PlaySound(coin_sound);
     }
-    if (is_colliding(player_pos, EXIT)) {
-        // TODO
 
+    if (is_colliding(player_pos, EXIT)) {
+        game_state = VICTORY_STATE;
     }
 }
 

@@ -40,9 +40,8 @@ void load_level(int offset) {
     level_index += offset;
 
     if (level_index >= LEVEL_COUNT) {
-        // TODO
-        // create_victory_menu_background();
-        // level_index = 0;
+        create_victory_menu_background();
+        level_index = 0;
         return;
     }
 
@@ -66,4 +65,4 @@ void unload_level() {
     delete[] current_level_data;
 }
 
-#endif // LEVEL_H
+#endif //LEVEL_H

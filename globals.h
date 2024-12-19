@@ -139,7 +139,6 @@ sprite player_sprite;
 
 Sound coin_sound;
 Sound exit_sound;
-Sound background_sound;
 
 /* Victory Menu Background */
 

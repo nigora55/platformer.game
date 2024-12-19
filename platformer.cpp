@@ -34,6 +34,23 @@ void update_game() {
 
             update_player();
             break;
+
+        case PAUSE_STATE:
+            if (IsKeyPressed(KEY_P)) {
+                game_state = GAME_STATE;
+            }
+            draw_pause_menu();
+            break;
+        case VICTORY_STATE:
+            if (game_state == GAME_STATE && is_colliding(player_pos, EXIT)) {
+                game_state = VICTORY_STATE;  // Switch to victory state when player collides with exit
+            }
+            if (IsKeyPressed(KEY_ENTER)) {
+                    game_state = GAME_STATE;
+                    player_pos.x = 100;
+                    player_pos.y = 100;
+            }
+            break;
     }
 }
 
@@ -48,10 +65,10 @@ void draw_game() {
             draw_game_overlay();
             break;
         case PAUSE_STATE:
+            ClearBackground(BLACK);
             draw_pause_menu();
             break;
         case VICTORY_STATE:
-            create_victory_menu_background();
             draw_victory_menu_background();
             draw_victory_menu();
             break;
@@ -73,18 +90,19 @@ int main() {
         BeginDrawing();
 
         update_game();
+
         draw_game();
 
         EndDrawing();
+        }
+
+        unload_level();
+        unload_sounds();
+        unload_images();
+        unload_fonts();
+
+        CloseAudioDevice();
+        CloseWindow();
+
+        return 0;
     }
-
-    unload_level();
-    unload_sounds();
-    unload_images();
-    unload_fonts();
-
-    CloseAudioDevice();
-    CloseWindow();
-
-    return 0;
-}
