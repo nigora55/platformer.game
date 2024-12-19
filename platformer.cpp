@@ -33,21 +33,6 @@ void update_game() {
             }
 
             update_player();
-
-            if(IsKeyPressed(KEY_ESCAPE)){
-                game_state = PAUSE_STATE;
-            }
-            break;
-        case PAUSE_STATE:
-            if (IsKeyPressed(KEY_ESCAPE)){
-                game_state = GAME_STATE;
-            }
-            draw_pause_menu();
-            break;
-        case VICTORY_STATE:
-            if (IsKeyPressed(KEY_ENTER)){
-                game_state = MENU_STATE;
-            }
             break;
     }
 }
@@ -61,7 +46,6 @@ void draw_game() {
             ClearBackground(BLACK);
             draw_level();
             draw_game_overlay();
-            load_sounds();
             break;
         case PAUSE_STATE:
             draw_pause_menu();
