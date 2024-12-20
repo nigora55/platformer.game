@@ -14,6 +14,7 @@ const char AIR    = ' ';
 const char PLAYER = '@';
 const char COIN   = '*';
 const char EXIT   = 'E';
+const char ENEMY  = '&';
 
 /* Levels */
 
