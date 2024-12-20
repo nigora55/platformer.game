@@ -31,6 +31,14 @@ void derive_graphics_metrics_from_loaded_level() {
     shift_to_center.y = (screen_size.y - level_height) * 0.5f;
 }
 
+void draw_splash(){
+    ClearBackground(WHITE);
+    DrawTexture(logo_image, 0, 0, WHITE);
+    draw_text(logo_title);
+
+}
+
+
 void draw_menu() {
     draw_text(game_title);
     draw_text(game_subtitle);

@@ -156,6 +156,13 @@ struct Text {
     Font* font = &menu_font;
 };
 
+Text logo_title = {
+        "NIKO'S GAME",
+        {0.65f,0.65f},
+        150.0f,
+        PINK,
+};
+
 Text game_title = {
     "MEOW!",
     { 0.50f, 0.50f },
@@ -189,6 +196,7 @@ Text victory_subtitle = {
 Texture2D wall_image;
 Texture2D air_image;
 Texture2D exit_image;
+Texture2D logo_image;
 
 struct sprite {
     size_t frame_count    = 0;
@@ -207,7 +215,6 @@ sprite player_sprite;
 
 Sound coin_sound;
 Sound exit_sound;
-Sound menu_sound;
 
 Music menu_music;
 Music level_music;
@@ -236,6 +243,7 @@ size_t game_frame = 0;
 /* Game States */
 
 enum game_state {
+    SPLASH_STATE,
     MENU_STATE,
     GAME_STATE,
     PAUSE_STATE,
