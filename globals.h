@@ -86,14 +86,30 @@ level LEVEL_4 = {
         LEVEL_4_DATA
 };
 
+char LEVEL_5_DATA[]{
+        '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#',
+        '#', '@', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#',
+        '#', '#', '#', '#', ' ', ' ', '*', ' ', ' ', ' ', '#',
+        '#', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', '#',
+        '#', '*', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', '#',
+        '#', ' ', ' ', ' ', ' ', '*', ' ', ' ', 'E', ' ', '#',
+        '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#',
+};
+
+level LEVEL_5 = {
+        7, 11,
+        LEVEL_5_DATA
+};
+
 int level_index = 0;
-const int LEVEL_COUNT = 4;
+const int LEVEL_COUNT = 5;
 
 level LEVELS[LEVEL_COUNT] = {
     LEVEL_1,
     LEVEL_2,
     LEVEL_3,
-    LEVEL_4
+    LEVEL_4,
+    LEVEL_5
 };
 
 /* Loaded Level Data */
