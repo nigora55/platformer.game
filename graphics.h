@@ -85,6 +85,7 @@ void draw_level() {
                 case EXIT:
                     draw_image(exit_image, pos, cell_size);
                     break;
+                ca
                 default:
                     break;
             }
@@ -102,6 +103,16 @@ void draw_player() {
 
     draw_sprite(player_sprite, pos, cell_size);
 }
+
+void draw_enemy() {
+    Vector2 pos = {
+            shift_to_center.x + enemy_pos.x * cell_size,
+            shift_to_center.y + enemy_pos.y * cell_size
+    };
+
+    draw_sprite(enemy_sprite,pos,cell_size);
+}
+
 
 void draw_pause_menu() {
     ClearBackground(BLACK);;

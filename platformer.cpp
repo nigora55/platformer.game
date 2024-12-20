@@ -102,7 +102,7 @@ int main() {
     SetExitKey(KEY_NULL);
 
     load_fonts();
-    load_images();
+    load_images(Texture2D());
     load_sounds();
     load_level();
 

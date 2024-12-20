@@ -15,12 +15,14 @@ void unload_fonts() {
     UnloadFont(menu_font);
 }
 
-void load_images() {
+void load_images(Texture2D texture) {
     wall_image    = LoadTexture("data/images/wall.png");
     air_image     = LoadTexture("data/images/air.png");
     exit_image   = LoadTexture("data/images/exit.png");
-    coin_sprite   = load_sprite("data/images/coin/coin",     ".png", 3, true, 18);
+    coin_sprite   = load_sprite("data/images/coin", ".png", 3, true, 18);
     player_sprite = load_sprite("data/images/player/cat", ".png", 3, true, 9);
+    menu_image    = LoadTexture("data/images/menu.png");
+    enemy_sprite  = load_sprite("data/images/enemy/enemy",".png",2,true,9);
 }
 
 void unload_images() {
@@ -29,6 +31,8 @@ void unload_images() {
     UnloadTexture(exit_image);
     unload_sprite(player_sprite);
     unload_sprite(coin_sprite);
+    UnloadTexture(menu_image);
+    unload_sprite(enemy_sprite);
 }
 
 void draw_image(Texture2D image, Vector2 pos, float size) {

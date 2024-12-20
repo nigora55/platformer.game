@@ -130,6 +130,10 @@ bool is_player_on_ground;
 
 int player_score = 0;
 
+// Enemy data
+
+Vector2 enemy_pos = {5.0f, 3.0f};
+
 /* Graphic Metrics */
 
 const float CELL_SCALE = 0.8f; // An aesthetic parameter to add some negative space around level
@@ -154,13 +158,6 @@ struct Text {
     Color color = WHITE;
     float spacing = 4.0f;
     Font* font = &menu_font;
-};
-
-Text logo_title = {
-        "NIKO'S GAME",
-        {0.65f,0.65f},
-        150.0f,
-        PINK,
 };
 
 Text game_title = {
@@ -196,7 +193,7 @@ Text victory_subtitle = {
 Texture2D wall_image;
 Texture2D air_image;
 Texture2D exit_image;
-Texture2D logo_image;
+Texture2D menu_image;
 
 struct sprite {
     size_t frame_count    = 0;
@@ -210,6 +207,7 @@ struct sprite {
 
 sprite coin_sprite;
 sprite player_sprite;
+sprite enemy_sprite;
 
 /* Sounds */
 
@@ -283,6 +281,12 @@ void spawn_player();
 void move_player_horizontally(float delta);
 void update_player();
 
+// ENEMY
+
+void spawn_enemy();
+void move_enemy_horizontally();
+void update_enemy();
+
 /// GAMEPLAY
 void reset_game();
 
@@ -291,7 +295,7 @@ void reset_game();
 void load_fonts();
 void unload_fonts();
 
-void load_images();
+void load_images(Texture2D texture);
 void unload_images();
 
 void draw_image(Texture2D image, Vector2 pos, float width, float height);
