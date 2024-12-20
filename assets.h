@@ -109,11 +109,13 @@ void load_sounds() {
 
     coin_sound = LoadSound("data/sounds/coin.wav");
     exit_sound = LoadSound("data/sounds/exit.wav");
+    menu_sound = LoadSound("data/sounds/menu..wav");
 }
 
 void unload_sounds() {
     UnloadSound(coin_sound);
     UnloadSound(exit_sound);
+    UnloadSound(menu_sound);
 }
 
 

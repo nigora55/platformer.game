@@ -207,6 +207,7 @@ sprite player_sprite;
 
 Sound coin_sound;
 Sound exit_sound;
+Sound menu_sound;
 
 /* Victory Menu Background */
 

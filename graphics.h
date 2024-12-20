@@ -34,6 +34,7 @@ void derive_graphics_metrics_from_loaded_level() {
 void draw_menu() {
     draw_text(game_title);
     draw_text(game_subtitle);
+    PlaySound(menu_sound);
 }
 
 
