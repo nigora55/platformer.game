@@ -120,5 +120,12 @@ void unload_sounds() {
     UnloadMusicStream(level_music);
 }
 
+void reset_game() {
+    load_level(0);
+    spawn_player();
+    player_score = 0;
+    game_state = MENU_STATE;
+}
+
 
 #endif // IMAGES_H

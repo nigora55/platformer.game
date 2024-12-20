@@ -62,7 +62,7 @@ void update_game() {
                 break;
         case VICTORY_STATE:
             if (IsKeyDown(KEY_ENTER)) {
-                game_state = MENU_STATE;
+                reset_game();
             }
             break;
     }

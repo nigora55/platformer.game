@@ -283,6 +283,9 @@ void spawn_player();
 void move_player_horizontally(float delta);
 void update_player();
 
+/// GAMEPLAY
+void reset_game();
+
 // ASSETS_H
 
 void load_fonts();
