@@ -21,8 +21,16 @@ void update_game() {
 
     switch(game_state) {
         case MENU_STATE:
+            if (!is_music_playing){
+                PlayMusicStream(menu_music);
+                is_music_playing = true;
+                StopMusicStream(level_music);
+            }
+
             if (IsKeyPressed(KEY_ENTER)){
                 game_state = GAME_STATE;
+                StopMusicStream(menu_music);
+                PlayMusicStream(level_music);
             }
             break;
         case GAME_STATE:
@@ -58,6 +66,9 @@ void update_game() {
             }
             break;
     }
+
+    UpdateMusicStream(menu_music);
+    UpdateMusicStream(level_music);
 }
 
 void draw_game() {

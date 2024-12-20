@@ -209,6 +209,10 @@ Sound coin_sound;
 Sound exit_sound;
 Sound menu_sound;
 
+Music menu_music;
+Music level_music;
+bool is_music_playing = false;
+
 /* Victory Menu Background */
 
 struct victory_ball {
@@ -263,6 +267,8 @@ char& get_collider(Vector2 pos, char look_for, level &level = current_level);
 
 void load_level(int offset = 0);
 void unload_level();
+
+
 
 // PLAYER_H
 

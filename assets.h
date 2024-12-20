@@ -109,13 +109,15 @@ void load_sounds() {
 
     coin_sound = LoadSound("data/sounds/coin.wav");
     exit_sound = LoadSound("data/sounds/exit.wav");
-    menu_sound = LoadSound("data/sounds/menu..wav");
+    menu_music = LoadMusicStream("data/sounds/menu..wav");
+    level_music = LoadMusicStream("data/sounds/level.wav");
 }
 
 void unload_sounds() {
     UnloadSound(coin_sound);
     UnloadSound(exit_sound);
-    UnloadSound(menu_sound);
+    UnloadMusicStream(menu_music);
+    UnloadMusicStream(level_music);
 }
 
 
