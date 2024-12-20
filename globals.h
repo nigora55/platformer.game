@@ -131,6 +131,8 @@ bool is_player_on_ground;
 
 int player_score = 0;
 
+int player_lives = 3;
+
 // Enemy data
 
 Vector2 enemy_pos = {5.0f, 3.0f};
@@ -207,6 +209,7 @@ Texture2D wall_image;
 Texture2D air_image;
 Texture2D exit_image;
 Texture2D menu_image;
+Texture2D heart_image;
 
 struct sprite {
     size_t frame_count    = 0;

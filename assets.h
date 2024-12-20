@@ -23,6 +23,7 @@ void load_images(Texture2D texture) {
     player_sprite = load_sprite("data/images/player/cat", ".png", 3, true, 9);
     menu_image    = LoadTexture("data/images/menu.png");
     enemy_sprite  = load_sprite("data/images/enemy/enemy",".png",2,true,9);
+    heart_image  = LoadTexture("data/images/heart.png");
 }
 
 void unload_images() {
@@ -33,6 +34,7 @@ void unload_images() {
     unload_sprite(coin_sprite);
     UnloadTexture(menu_image);
     unload_sprite(enemy_sprite);
+    UnloadTexture(heart_image);
 }
 
 void draw_image(Texture2D image, Vector2 pos, float size) {

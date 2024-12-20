@@ -53,7 +53,19 @@ void draw_game_overlay() {
 
     draw_text(score_shadow);
     draw_text(score);
-}
+
+    // health player
+    float heart_spacing = 80.0f;
+    float x_position = 400.0f;
+    float y_position = 423.0f;
+    float scale_factor = 3.5f;
+
+    for (int i = 0; i < player_lives; i++){
+        Vector2 heart_pos = { x_position + i * heart_spacing, y_position};
+        Vector2 heart_scale = { scale_factor, scale_factor};
+        DrawTextureEx(heart_image,heart_pos, 0.0f, heart_scale.x, WHITE);
+    }
+    };
 
 void draw_level() {
     for (size_t row = 0; row < current_level.rows; ++row) {
@@ -85,7 +97,6 @@ void draw_level() {
                 case EXIT:
                     draw_image(exit_image, pos, cell_size);
                     break;
-                ca
                 default:
                     break;
             }
