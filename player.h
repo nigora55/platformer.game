@@ -41,10 +41,6 @@ void update_player() {
         PlaySound(coin_sound);
     }
 
-    if (is_colliding(player_pos, BOMB)) {
-        get_collider(player_pos, BOMB);
-    }
-
     if (is_colliding(player_pos, EXIT)) {
         load_level(1);
     }

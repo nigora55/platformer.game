@@ -40,7 +40,8 @@ void load_level(int offset) {
     level_index += offset;
 
     if (level_index >= LEVEL_COUNT) {
-        create_victory_menu_background();
+        unload_level();
+        game_state = VICTORY_STATE;
         level_index = 0;
         return;
     }

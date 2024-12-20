@@ -53,7 +53,7 @@ void update_game() {
             }
                 break;
         case VICTORY_STATE:
-            if (IsKeyPressed(KEY_ENTER)) {
+            if (IsKeyDown(KEY_ENTER)) {
                 game_state = MENU_STATE;
             }
             break;
@@ -63,16 +63,20 @@ void update_game() {
 void draw_game() {
     switch (game_state){
         case MENU_STATE:
+            ClearBackground(BLACK);
             draw_menu();
             break;
         case GAME_STATE:
+            ClearBackground(BLACK);
             draw_level();
             draw_game_overlay();
             break;
         case PAUSE_STATE:
+            ClearBackground(BLACK);
             draw_pause_menu();
             break;
         case VICTORY_STATE:
+            ClearBackground(BLACK);
             draw_victory_menu_background();
             draw_victory_menu();
             break;

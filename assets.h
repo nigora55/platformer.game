@@ -18,7 +18,7 @@ void unload_fonts() {
 void load_images() {
     wall_image    = LoadTexture("data/images/wall.png");
     air_image     = LoadTexture("data/images/air.png");
-    exit_image    = LoadTexture("data/images/exit.png");
+    exit_image   = LoadTexture("data/images/exit.png");
     coin_sprite   = load_sprite("data/images/coin/coin",     ".png", 3, true, 18);
     player_sprite = load_sprite("data/images/player/cat", ".png", 3, true, 9);
 }

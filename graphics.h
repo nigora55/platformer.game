@@ -75,8 +75,6 @@ void draw_level() {
                 case WALL:
                     draw_image(wall_image, pos, cell_size);
                     break;
-                case BOMB:
-                    draw_image(bomb_image,pos,cell_size);
             }
             // The second image layer
             switch (cell) {
@@ -86,8 +84,6 @@ void draw_level() {
                 case EXIT:
                     draw_image(exit_image, pos, cell_size);
                     break;
-                case BOMB:
-                    draw_sprite(bomb_sprite, pos,cell_size);
                 default:
                     break;
             }
