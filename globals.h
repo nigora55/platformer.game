@@ -189,6 +189,18 @@ Text victory_subtitle = {
     { 0.50f, 0.65f }
 };
 
+Text game_over_title = {
+        "You Died!",
+        {0.50f, 0.50f},
+        100.0f,
+        RED
+};
+
+Text game_over_subtitle = {
+        "Press Space to go back to menu",
+        {0.50f, 0.65f}
+};
+
 /* Images and Sprites */
 
 Texture2D wall_image;
@@ -246,6 +258,7 @@ enum game_state {
     GAME_STATE,
     PAUSE_STATE,
     VICTORY_STATE,
+    GAME_OVER_STATE,
 };
 
 game_state game_state = MENU_STATE;

@@ -20,5 +20,4 @@ void spawn_enemy() {
 
 
 
-
 #endif ENEMY_H

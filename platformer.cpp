@@ -65,6 +65,11 @@ void update_game() {
                 reset_game();
             }
             break;
+
+        case GAME_OVER_STATE:
+            if (IsKeyPressed(KEY_SPACE)){
+                reset_game();
+            }
     }
 
     UpdateMusicStream(menu_music);
@@ -91,6 +96,9 @@ void draw_game() {
             draw_victory_menu_background();
             draw_victory_menu();
             break;
+        case GAME_OVER_STATE:
+            ClearBackground(BLACK);
+            draw_game_over_state();
     }
 }
 
