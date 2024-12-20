@@ -20,12 +20,6 @@ void update_game() {
     game_frame++;
 
     switch(game_state) {
-        case SPLASH_STATE:
-            if (IsKeyPressed(KEY_ENTER)){
-                game_state = MENU_STATE;
-            }
-            break;
-
         case MENU_STATE:
             if (!is_music_playing){
                 PlayMusicStream(menu_music);
@@ -79,9 +73,6 @@ void update_game() {
 
 void draw_game() {
     switch (game_state){
-        case SPLASH_STATE:
-            ClearBackground(BLACK);
-            draw_splash();
         case MENU_STATE:
             ClearBackground(BLACK);
             draw_menu();

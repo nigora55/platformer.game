@@ -243,7 +243,6 @@ size_t game_frame = 0;
 /* Game States */
 
 enum game_state {
-    SPLASH_STATE,
     MENU_STATE,
     GAME_STATE,
     PAUSE_STATE,
