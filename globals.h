@@ -276,6 +276,7 @@ void draw_menu();
 void draw_game_overlay();
 void draw_level();
 void draw_player();
+void draw_enemy();
 void draw_pause_menu();
 void create_victory_menu_background();
 void animate_victory_menu_background();

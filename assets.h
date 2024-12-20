@@ -129,6 +129,7 @@ void unload_sounds() {
 void reset_game() {
     load_level(0);
     spawn_player();
+    spawn_enemy();
     player_score = 0;
     game_state = MENU_STATE;
 }

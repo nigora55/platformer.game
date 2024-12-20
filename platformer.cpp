@@ -3,6 +3,7 @@
 #include "globals.h"
 #include "level.h"
 #include "player.h"
+#include "enemy.h"
 #include "graphics.h"
 #include "assets.h"
 #include "utilities.h"
@@ -85,6 +86,7 @@ void draw_game() {
         case GAME_STATE:
             ClearBackground(BLACK);
             draw_level();
+            draw_player();
             draw_game_overlay();
             break;
         case PAUSE_STATE:
