@@ -25,6 +25,16 @@ void move_player_horizontally(float delta) {
     }
 }
 
+void player_hurts() {
+    if (is_colliding(player_pos, '&', current_level)){
+        player_lives--;
+        if (player_lives <= 0){
+            game_state = GAME_OVER_STATE;
+        }
+    }
+};
+
+
 void update_player() {
     player_pos.y += player_y_velocity;
     player_y_velocity += GRAVITY_FORCE;

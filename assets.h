@@ -19,7 +19,7 @@ void load_images(Texture2D texture) {
     wall_image    = LoadTexture("data/images/wall.png");
     air_image     = LoadTexture("data/images/air.png");
     exit_image   = LoadTexture("data/images/exit.png");
-    coin_sprite   = load_sprite("data/images/coin", ".png", 3, true, 18);
+    coin_sprite   = load_sprite("data/images/coin/coin", ".png", 3, true, 18);
     player_sprite = load_sprite("data/images/player/cat", ".png", 3, true, 9);
     menu_image    = LoadTexture("data/images/menu.png");
     enemy_sprite  = load_sprite("data/images/enemy/enemy",".png",2,true,9);
