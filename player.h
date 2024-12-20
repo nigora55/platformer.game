@@ -29,7 +29,7 @@ void update_player() {
     player_pos.y += player_y_velocity;
     player_y_velocity += GRAVITY_FORCE;
 
-    is_player_on_ground = is_colliding({ player_pos.x, player_pos.y + 0.1f }, WALL);
+    is_player_on_ground = is_colliding({player_pos.x, player_pos.y + 0.1f}, WALL);
     if (is_player_on_ground) {
         player_y_velocity = 0;
         player_pos.y = roundf(player_pos.y);
@@ -37,8 +37,12 @@ void update_player() {
 
     if (is_colliding(player_pos, COIN)) {
         get_collider(player_pos, COIN) = ' ';
-        player_score+=10;
+        player_score += 10;
         PlaySound(coin_sound);
+    }
+
+    if (is_colliding(player_pos, BOMB)) {
+        get_collider(player_pos, BOMB);
     }
 
     if (is_colliding(player_pos, EXIT)) {

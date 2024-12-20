@@ -7,14 +7,21 @@
 #include "assets.h"
 #include "utilities.h"
 
+/// Add hearts, 2 background music, 2 enemy, 3 more levels, explosion of the bomb, pause_menu, pictures on menu,
+/// work on victory menu, add reverse movements, add keys for doors, add collecting hearts, add transportation,
+/// logo for game, moving enemy, menu icon(start, exit, history), add conversation with cats, collect peace of book,
+/// at the end display the book, in which there is a message ///
+
+
+
+
 
 void update_game() {
     game_frame++;
 
     switch(game_state) {
         case MENU_STATE:
-            if (IsKeyDown(KEY_ENTER)){
-                ClearBackground(WHITE);
+            if (IsKeyPressed(KEY_ENTER)){
                 game_state = GAME_STATE;
             }
             break;
@@ -34,15 +41,19 @@ void update_game() {
             }
 
             update_player();
+
+            if(IsKeyPressed(KEY_ESCAPE)){
+                game_state = PAUSE_STATE;
+            }
             break;
 
         case PAUSE_STATE:
-            if (IsKeyPressed(KEY_ESCAPE)) {
-            draw_pause_menu();
+            if (IsKeyPressed(KEY_ENTER)) {
+                game_state = GAME_STATE;
             }
                 break;
         case VICTORY_STATE:
-            if (IsKeyDown(KEY_ENTER)) {
+            if (IsKeyPressed(KEY_ENTER)) {
                 game_state = MENU_STATE;
             }
             break;
@@ -55,16 +66,13 @@ void draw_game() {
             draw_menu();
             break;
         case GAME_STATE:
-            ClearBackground(BLACK);
             draw_level();
             draw_game_overlay();
             break;
         case PAUSE_STATE:
-            ClearBackground(BLACK);
             draw_pause_menu();
             break;
         case VICTORY_STATE:
-            ClearBackground(BLACK);
             draw_victory_menu_background();
             draw_victory_menu();
             break;
@@ -72,10 +80,11 @@ void draw_game() {
 }
 
 
-
 int main() {
     InitWindow(1024, 480, "Platformer");
     SetTargetFPS(60);
+
+    SetExitKey(KEY_NULL);
 
     load_fonts();
     load_images();
