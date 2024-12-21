@@ -81,6 +81,7 @@ void draw_level() {
             switch (cell) {
                 case AIR:
                 case PLAYER:
+                case ENEMY:
                 case COIN:
                 case EXIT:
                     draw_image(air_image, pos, cell_size);
@@ -88,6 +89,7 @@ void draw_level() {
                 case WALL:
                     draw_image(wall_image, pos, cell_size);
                     break;
+
             }
             // The second image layer
             switch (cell) {
@@ -99,6 +101,8 @@ void draw_level() {
                     break;
                 default:
                     break;
+                case ENEMY:
+                    draw_sprite(enemy_sprite, pos, cell_size);
             }
         }
     }

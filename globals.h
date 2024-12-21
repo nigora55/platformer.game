@@ -302,10 +302,8 @@ void update_player();
 // ENEMY
 
 void spawn_enemy();
-void move_enemy_horizontally();
-void update_enemy();
 
-/// GAMEPLAY
+// GAMEPLAY
 void reset_game();
 
 // ASSETS_H
