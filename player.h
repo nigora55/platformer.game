@@ -25,12 +25,12 @@ void move_player_horizontally(float delta) {
     }
 }
 
-void player_hurts() {
-    if (is_colliding(player_pos, '&', current_level)){
-        player_lives--;
-        if (player_lives <= 0){
-            game_state = GAME_OVER_STATE;
-        }
+void player_hurts(int hurt) {
+    player_lives -= hurt;
+
+    if (player_lives <= 0){
+        player_lives = 0;
+        game_state = GAME_OVER_STATE;
     }
 };
 
@@ -54,6 +54,11 @@ void update_player() {
     if (is_colliding(player_pos, EXIT)) {
         load_level(1);
     }
+
+    if (is_colliding(player_pos, ENEMY, current_level)){
+        player_hurts(1);
+    }
+
 }
 
 #endif // PLAYER_H

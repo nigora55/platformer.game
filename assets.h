@@ -118,6 +118,7 @@ void load_sounds() {
     menu_music = LoadMusicStream("data/sounds/menu..wav");
     level_music = LoadMusicStream("data/sounds/level.wav");
     victory_music  = LoadMusicStream("data/sounds/victory.wav");
+    gameover_music = LoadMusicStream("data/sounds/gameover.wav");
 }
 
 void unload_sounds() {
@@ -126,13 +127,7 @@ void unload_sounds() {
     UnloadMusicStream(menu_music);
     UnloadMusicStream(level_music);
     UnloadMusicStream(victory_music);
-}
-
-void reset_game() {
-    load_level(0);
-    spawn_player();
-    player_score = 0;
-    game_state = MENU_STATE;
+    UnloadMusicStream(gameover_music);
 }
 
 

@@ -132,6 +132,7 @@ bool is_player_on_ground;
 int player_score = 0;
 
 int player_lives = 3;
+const int max_health = 3;
 
 // Enemy data
 
@@ -234,7 +235,9 @@ Sound exit_sound;
 Music menu_music;
 Music level_music;
 Music victory_music;
+Music gameover_music;
 bool is_music_playing = false;
+
 
 /* Victory Menu Background */
 

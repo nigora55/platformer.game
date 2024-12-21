@@ -8,7 +8,7 @@
 #include "assets.h"
 #include "utilities.h"
 
-/// Add hearts, 2 background music, 2 enemy, 3 more levels, explosion of the bomb, pause_menu, pictures on menu,
+///2 enemy, 3 more levels, explosion of the bomb, pause_menu, pictures on menu,
 /// work on victory menu, add reverse movements, add keys for doors, add collecting hearts, add transportation,
 /// logo for game, moving enemy, menu icon(start, exit, history), add conversation with cats, collect peace of book,
 /// at the end display the book, in which there is a message ///
@@ -16,17 +16,13 @@
 
 
 
-
+void update_menu_sound();
 void update_game() {
     game_frame++;
 
     switch(game_state) {
         case MENU_STATE:
-            if (!is_music_playing){
-                PlayMusicStream(menu_music);
-                is_music_playing = true;
-                StopMusicStream(level_music);
-            }
+            update_menu_sound();
 
             if (IsKeyPressed(KEY_ENTER)){
                 game_state = GAME_STATE;
@@ -51,6 +47,14 @@ void update_game() {
 
             update_player();
 
+            if (!is_music_playing){
+                PlayMusicStream(level_music);
+                is_music_playing = true;
+                StopMusicStream(menu_music);
+                StopMusicStream(victory_music);
+
+            }
+
             if(IsKeyPressed(KEY_ESCAPE)){
                 game_state = PAUSE_STATE;
             }
@@ -58,30 +62,47 @@ void update_game() {
             break;
 
         case PAUSE_STATE:
-            if (IsKeyPressed(KEY_ENTER)) {
-                game_state = GAME_STATE;
-            }
             if (!is_music_playing){
-                PlayMusicStream(level_music);
+                PlayMusicStream(gameover_music);
                 is_music_playing = true;
                 StopMusicStream(level_music);
+                StopMusicStream(victory_music);
+                StopMusicStream(menu_music);
+            }
+
+            if (IsKeyPressed(KEY_ENTER)) {
+                game_state = GAME_STATE;
+                StopMusicStream(gameover_music);
+                PlayMusicStream(level_music);
+
             }
                 break;
         case VICTORY_STATE:
+            if (!is_music_playing){
+                StopMusicStream(level_music);
+                StopMusicStream(menu_music);
+                PlayMusicStream(victory_music);
+                is_music_playing = true;
+            }
+
             if (IsKeyDown(KEY_ENTER)) {
                 reset_game();
+                StopMusicStream(victory_music);
             }
-            PlayMusicStream(victory_music);
+
             break;
 
         case GAME_OVER_STATE:
             if (IsKeyPressed(KEY_SPACE)){
                 reset_game();
+                StopMusicStream(victory_music);
             }
     }
 
     UpdateMusicStream(menu_music);
     UpdateMusicStream(level_music);
+    UpdateMusicStream(victory_music);
+    UpdateMusicStream(gameover_music);
 }
 
 void draw_game() {
@@ -143,3 +164,16 @@ int main() {
 
         return 0;
     }
+
+
+void update_menu_sound() {
+
+    if (!IsMusicStreamPlaying(menu_music)) {
+        StopMusicStream(level_music);
+        StopMusicStream(victory_music);
+        StopMusicStream(gameover_music);
+
+        PlayMusicStream(menu_music);
+    }
+}
+

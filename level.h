@@ -66,4 +66,16 @@ void unload_level() {
     delete[] current_level_data;
 }
 
+void reset_game() {
+    load_level(0);
+    spawn_player();
+    player_score = 0;
+    game_state = MENU_STATE;
+
+    if (!IsMusicStreamPlaying(victory_music)) {
+        PlayMusicStream(menu_music);
+    }
+    UpdateMusicStream(menu_music);
+}
+
 #endif //LEVEL_H

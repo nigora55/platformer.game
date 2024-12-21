@@ -187,6 +187,7 @@ void draw_victory_menu() {
 
     animate_victory_menu_background();
     draw_victory_menu_background();
+    create_victory_menu_background();
 
     draw_text(victory_title);
     draw_text(victory_subtitle);
