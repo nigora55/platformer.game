@@ -54,17 +54,24 @@ void update_game() {
             if(IsKeyPressed(KEY_ESCAPE)){
                 game_state = PAUSE_STATE;
             }
+
             break;
 
         case PAUSE_STATE:
             if (IsKeyPressed(KEY_ENTER)) {
                 game_state = GAME_STATE;
             }
+            if (!is_music_playing){
+                PlayMusicStream(level_music);
+                is_music_playing = true;
+                StopMusicStream(level_music);
+            }
                 break;
         case VICTORY_STATE:
             if (IsKeyDown(KEY_ENTER)) {
                 reset_game();
             }
+            PlayMusicStream(victory_music);
             break;
 
         case GAME_OVER_STATE:

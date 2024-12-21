@@ -46,10 +46,6 @@ void load_level(int offset) {
         return;
     }
 
-    if (level_index == 2) {
-        draw_enemy();
-    }
-
     size_t rows = LEVELS[level_index].rows;
     size_t columns = LEVELS[level_index].columns;
     current_level_data = new char[rows*columns];

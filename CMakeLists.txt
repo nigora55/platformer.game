@@ -12,6 +12,5 @@ elseif(UNIX)
 endif()
 
 add_executable(platformer platformer.cpp globals.h assets.h utilities.h level.h graphics.h player.h
-        enemy.h
 )
 target_link_libraries(platformer PRIVATE raylib glfw)

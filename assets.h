@@ -117,6 +117,7 @@ void load_sounds() {
     exit_sound = LoadSound("data/sounds/exit.wav");
     menu_music = LoadMusicStream("data/sounds/menu..wav");
     level_music = LoadMusicStream("data/sounds/level.wav");
+    victory_music  = LoadMusicStream("data/sounds/victory.wav");
 }
 
 void unload_sounds() {
@@ -124,6 +125,7 @@ void unload_sounds() {
     UnloadSound(exit_sound);
     UnloadMusicStream(menu_music);
     UnloadMusicStream(level_music);
+    UnloadMusicStream(victory_music);
 }
 
 void reset_game() {

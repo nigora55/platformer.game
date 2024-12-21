@@ -136,6 +136,7 @@ int player_lives = 3;
 // Enemy data
 
 Vector2 enemy_pos = {5.0f, 3.0f};
+bool enemy_spawned = false;
 
 /* Graphic Metrics */
 
@@ -232,6 +233,7 @@ Sound exit_sound;
 
 Music menu_music;
 Music level_music;
+Music victory_music;
 bool is_music_playing = false;
 
 /* Victory Menu Background */
@@ -301,7 +303,6 @@ void update_player();
 
 // ENEMY
 
-void spawn_enemy();
 
 // GAMEPLAY
 void reset_game();
